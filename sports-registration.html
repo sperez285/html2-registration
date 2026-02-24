@@ -10,10 +10,19 @@ body{
     background-color: whitesmoke;
 }
 
+.container {
+max-width: 950px;
+margin: 30px auto;
+background-color: white;
+padding: 24px;
+border-radius: 12px;
+box-shadow: 0 4px 14px rgba(0,0,0,0.10);
+}
+
 h1{
    text-align: center;
    margin: 0 0 18px 0;
-
+   background-color: powderblue;
 }
 
 h2{
@@ -32,7 +41,6 @@ th,td{
     text-align: left;
     font-size: 14px;
     width: 200px;
-
 }
 
 label {
@@ -42,7 +50,7 @@ font-weight: 700;
 font-size: 14px;
 }
 
-input, button {
+input, button, select {
 width: 100%;
 box-sizing: border-box;
 padding: 9px 10px;
@@ -53,9 +61,42 @@ font-size: 14px;
 outline: none;
 }
 
-input:focus, button:focus {
+input:focus, button:focus, select:focus{
 border-color: #0b6aa2;
 box-shadow: 0 0 0 3px rgba(11, 106, 162, 0.15);
+}
+
+.groupBox {
+margin-top: 14px;
+padding: 12px;
+border: 1px solid #e5e7eb;
+border-radius: 10px;
+background-color: #f9fafb;
+}
+.groupTitle {
+font-weight: 800;
+margin-bottom: 10px;
+font-size: 14px;
+}
+
+.inline {
+display: flex;
+flex-wrap: wrap;
+gap: 10px 18px;
+align-items: center;
+}
+.inline label {
+margin: 0;
+font-weight: 600;
+display: flex;
+gap: 8px;
+align-items: center;
+
+}
+.inline input[type="radio"],
+.inline input[type="checkbox"] {
+width: auto;
+margin: 0;
 }
 
 button[type="submit"], button[type="reset"] {
@@ -88,6 +129,7 @@ background-color: #4b5563;
 </style>
 </head>
 <body> 
+<div class="container">
 <h1>Sports Event Registration Page</h1>
 <h2>Upcoming Events</h2>
 <table>
@@ -126,6 +168,7 @@ background-color: #4b5563;
 <h2>Register for an Event</h2>
 
 <form method="POST">
+<div class="row2">
     <label for="fullname">Full Name(required)</label>
     <input type="text" id="fullname" placeholder="John Doe" required>
 
@@ -151,31 +194,46 @@ background-color: #4b5563;
         <option value="Canada">Canada</option>
     </select>
 
-    <label for="ticket_type">Ticket Type(choose any)</label>
+</div>
 
-    <label for="Standard">Standard</label>
-    <input type="radio" id="Standard" value="Standard">
-    <label for="VIP">VIP</label>
-    <input type="radio" id="VIP" value="VIP">
-    <label for="Student">Student</label>
-    <input type="radio" id="Student" value="Student">
+    <div class="groupBox">
+    <div class="groupTitle">Ticket Type (choose one)</div>
 
-    <label for="ticket_type">Extra Options(choose one)</label>
+    <div class="inline">
+    <label>
+    <input type="radio" name="ticket_type" value="Standard"> Standard
+    </label>
 
-    <label for="Parking">Parking</label>
-    <input type="radio" id="Parking" value="Parking">
-    <label for="Meal">Meal</label>
-    <input type="radio" id="Meal" value="Meal">
-    <label for="Merchandise">Merchandise</label>
-    <input type="radio" id="Merchandise" value="Merchandise">
+    <label>
+    <input type="radio" name="ticket_type" value="VIP"> VIP
+    </label>
 
+    <label>
+<input type="radio" name="ticket_type" value="Student"> Student
+    </label>
+    </div>
+
+</div>
+    <div class="groupBox">
+    <div class="groupTitle">Extra Options (choose any)</div>
+
+    <div class="inline">
+    <label><input type="checkbox" name="extras" value="Parking"> Parking</label>
+    <label><input type="checkbox" name="extras" value="Meal"> Meal</label>
+    <label><input type="checkbox" name="extras" value="Merchandise"> Merchandise</label>
+    </div>
+    </div>
+
+    <label for="eventdate">Event Date</label>
+    <input type="date" id="eventdate" required>
+
+    <label for="time">Arrival Time</label>
+    <input type="time" id="time" required>
 
     <button type="submit">Submit Registration</button>
 
     <button type="reset">Reset Form</button>
 </form>
-
-
-
+</div>
 </body>
 </html>
