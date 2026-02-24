@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<meta charset="utf-8" />
+<title>Sports Registration</title>
+<style>
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: whitesmoke;
+}
+
+h1{
+   text-align: center;
+   margin: 0 0 18px 0;
+
+}
+
+h2{
+    margin: 26px 0 10px 0
+}
+
+table{
+    text-align: center;
+    border: solid 1pt black;
+    border-collapse: collapse;
+}
+
+th,td{
+    border: solid 2px black;
+    padding: 10px;
+    text-align: left;
+    font-size: 14px;
+    width: 200px;
+
+}
+
+label {
+display: block;
+margin-top: 12px;
+font-weight: 700;
+font-size: 14px;
+}
+
+input, button {
+width: 100%;
+box-sizing: border-box;
+padding: 9px 10px;
+margin-top: 6px;
+border-radius: 8px;
+border: 1px solid #cbd5e1;
+font-size: 14px;
+outline: none;
+}
+
+input:focus, button:focus {
+border-color: #0b6aa2;
+box-shadow: 0 0 0 3px rgba(11, 106, 162, 0.15);
+}
+
+button[type="submit"], button[type="reset"] {
+border: none;
+border-radius: 10px;
+padding: 10px 14px;
+font-weight: 800;
+cursor: pointer;
+font-size: 14px;
+}
+
+button[type="submit"] {
+background-color: #0b6aa2;
+color: white;
+}
+
+button[type="submit"]:hover {
+background-color: #084d78;
+}
+
+button[type="reset"] {
+background-color: #6b7280;
+color: white;
+}
+
+button[type="reset"]:hover {
+background-color: #4b5563;
+}
+
+</style>
+</head>
+<body> 
+<h1>Sports Event Registration Page</h1>
+<h2>Upcoming Events</h2>
+<table>
+    <tr>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Location</th>
+    </tr>
+    <tr>
+        <td>Soccer</td>
+        <td>2026-03-10</td>
+        <td>8:00</td>
+        <td>Stadium A</td>
+    </tr>
+    <tr>
+        <td>Basketball</td>
+        <td>2026-03-12</td>
+        <td>10:00</td>
+        <td>Arena B</td>
+    </tr>
+    <tr>
+        <td>Swimming</td>
+        <td>2026-03-15</td>
+        <td>9:00</td>
+        <td>Pool C</td>
+    </tr>
+    <tr>
+        <td>Tennis</td>
+        <td>2026-03-18</td>
+        <td>7:30</td>
+        <td>Court D</td>
+    </tr>
+</table>
+ 
+<h2>Register for an Event</h2>
+
+<form method="POST">
+    <label for="fullname">Full Name(required)</label>
+    <input type="text" id="fullname" placeholder="John Doe" required>
+
+    <label for="Age">Age(16 to 80)</label>
+    <input type="number" id="Age" placeholder="(16 to 80)" min="16" max="80" required>
+
+    <label for="Email">Email(required)</label>
+    <input type="email" id="Email" placeholder="name@example.com" required>
+
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder="Create a password" minlength="12" maxlength="21" required>
+
+    <label for confirm_password>Confirm Password</label>
+    <input type="password" id="confirm_password" placeholder="Re-Enter password" minlength="12" maxlength="21" required>
+
+    <span id="matchMessage"></span>
+
+    <label for="country">Country(select one)</label>
+    <select id="country" required>
+        <option value="" disabled selected hidden>Select</option>
+        <option value="USA">United States</option>
+        <option value="Mexico">Mexico</option>
+        <option value="Canada">Canada</option>
+    </select>
+
+    <label for="ticket_type">Ticket Type(choose any)</label>
+
+    <label for="Standard">Standard</label>
+    <input type="radio" id="Standard" value="Standard">
+    <label for="VIP">VIP</label>
+    <input type="radio" id="VIP" value="VIP">
+    <label for="Student">Student</label>
+    <input type="radio" id="Student" value="Student">
+
+    <label for="ticket_type">Extra Options(choose one)</label>
+
+    <label for="Parking">Parking</label>
+    <input type="radio" id="Parking" value="Parking">
+    <label for="Meal">Meal</label>
+    <input type="radio" id="Meal" value="Meal">
+    <label for="Merchandise">Merchandise</label>
+    <input type="radio" id="Merchandise" value="Merchandise">
+
+
+    <button type="submit">Submit Registration</button>
+
+    <button type="reset">Reset Form</button>
+</form>
+
+
+
+</body>
+</html>
